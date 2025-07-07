@@ -5,6 +5,14 @@ module "resource_group" {
   resource_group_location = "centralindia"
 
 }
+
+module "resource_group_rakesh" {
+  source = "../modules/azurerm_resource_group"
+
+  resource_group_name     = "rakesh-rg"
+  resource_group_location = "eastus"
+
+}
 module "frontendpip" {
   depends_on              = [module.resource_group]
   source                  = "../modules/azurerm_pip"
