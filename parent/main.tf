@@ -5,6 +5,13 @@ module "resource_group" {
   resource_group_location = "centralindia"
 
 }
+
+module "resource_group_rakesh" {
+  source = "../modules/azurerm_resource_group"
+
+  resource_group_name     = "rakesh-rg"
+  resource_group_location = "eastus"
+}
 module "resource_group2" {
   source = "../modules/azurerm_resource_group"
 
