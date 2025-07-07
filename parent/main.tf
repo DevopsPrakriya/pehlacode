@@ -11,6 +11,12 @@ module "resource_group_rakesh" {
 
   resource_group_name     = "rakesh-rg"
   resource_group_location = "eastus"
+}
+module "resource_group2" {
+  source = "../modules/azurerm_resource_group"
+
+  resource_group_name     = "swapnilrg"
+  resource_group_location = "westus2"
 
 }
 module "frontendpip" {
