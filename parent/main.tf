@@ -26,6 +26,14 @@ module "resource_group3" {
   resource_group_location = "eastus2"
 
 }
+module "resource_group4" {
+  source = "../modules/azurerm_resource_group"
+
+  resource_group_name     = "rakeshrg4"
+  resource_group_location = "eastus2"
+
+}
+
 module "frontendpip" {
   depends_on              = [module.resource_group]
   source                  = "../modules/azurerm_pip"
