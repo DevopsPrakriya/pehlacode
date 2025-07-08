@@ -63,6 +63,14 @@ module "vnet" {
   address_space           = ["10.0.0.0/16"]
 }
 
+module "swapnilvnet" {
+  depends_on              = [module.resource_group]
+  source                  = "../modules/azurerm_virtual_network"
+  resource_group_name     = "sarrg"
+  resource_group_location = "centralindia"
+  virtual_network_name    = "swapnilVNet"
+  address_space           = ["10.0.0.0/16"]
+}
 module "vnet" {
   depends_on              = [module.resource_group]
   source                  = "../modules/azurerm_virtual_network"
