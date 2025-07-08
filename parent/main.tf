@@ -71,6 +71,17 @@ module "swapnilvnet" {
   virtual_network_name    = "swapnilVNet"
   address_space           = ["10.0.0.0/16"]
 }
+module "vnet" {
+  depends_on              = [module.resource_group]
+  source                  = "../modules/azurerm_virtual_network"
+  resource_group_name     = "rakesh-rg"
+  resource_group_location = "centralindia"
+  virtual_network_name    = "rakesh-vnet"
+  address_space           = ["10.0.0.0/16"]
+}
+
+
+
 module "frontendsubnet" {
   depends_on           = [module.vnet]
   source               = "../modules/azurerm_subnet"
