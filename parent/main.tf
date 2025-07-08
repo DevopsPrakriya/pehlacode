@@ -12,6 +12,13 @@ module "resource_group2" {
   resource_group_location = "westus2"
 
 }
+module "resource_group3" {
+  source = "../modules/azurerm_resource_group"
+
+  resource_group_name     = "swapnilrg3"
+  resource_group_location = "eastus2"
+
+}
 module "frontendpip" {
   depends_on              = [module.resource_group]
   source                  = "../modules/azurerm_pip"
